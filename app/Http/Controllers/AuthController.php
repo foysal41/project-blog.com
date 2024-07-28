@@ -11,6 +11,10 @@ class AuthController extends Controller
     }
 
     public function register(){
-        die;
+        return view('auth.register');
+    }
+
+    public function forgotPassword(){
+        return view('auth.forgot');
     }
 }
