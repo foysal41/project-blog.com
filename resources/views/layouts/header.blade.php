@@ -9,7 +9,7 @@
         style="font-size: 50px"
       >
         <i class="flaticon-043-teddy-bear"></i>
-        <span class="text-primary">KidKinder</span>
+        <span class="text-primary"><a href="{{url('/')}}">KidKinder</a></span>
       </a>
       <button
         type="button"
@@ -43,7 +43,8 @@
           </div>
           <a href="contact.html" class="nav-item nav-link">Contact</a>
         </div>
-        <a href="" class="btn btn-primary px-4">Join Class</a>
+        <a href="{{url('login')}}" class="btn btn-primary px-4 mr-2">Login </a>
+        <a href="{{url('register')}}" class="btn btn-primary px-4">Register </a>
       </div>
     </nav>
   </div>

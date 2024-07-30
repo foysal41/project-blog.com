@@ -33,6 +33,8 @@
 
 <body>
 
+  @include('layouts.header')
+
   <main>
     <div class="container">
 
@@ -57,6 +59,7 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
+                  @include('layouts.message')
                   <form class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
@@ -103,6 +106,8 @@
     </div>
   </main><!-- End #main -->
 
+
+  @include('layouts.footer')
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

@@ -1,6 +1,7 @@
 
    @extends('layouts.app')
-
+  @section('style')
+  @endsection
    @section('content')
 
     <!-- Header Start -->
@@ -732,4 +733,6 @@
     <!-- Blog End -->
 
 
+@endsection
+@section('script')
 @endsection

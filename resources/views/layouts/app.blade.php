@@ -32,6 +32,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="front/css/style.css" rel="stylesheet" />
+
+    @yield('style')
   </head>
 
   <body>
@@ -66,5 +68,6 @@
 
   <!-- Template Javascript -->
   <script src="front/js/main.js"></script>
+  @yield('script')
 </body>
 </html>
