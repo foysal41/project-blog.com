@@ -28,3 +28,10 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'create_user']);
 Route::get('verify/{token}', [AuthController::class, 'verify']);
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword']);
+//#9 = 2nd create post route
+Route::post('/forgot-password', [AuthController::class, 'forgot_password']);
+
+//#9 = 5th
+Route::get('reset/{token}', [AuthController::class, 'reset']);
+Route::post('reset/{token}', [AuthController::class, 'post_reset']);
+
