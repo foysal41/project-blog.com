@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+//#8 = 4th create getSingle model
+    static public function getSingle($id){
+
+        return self::find($id);
+    }
 }
