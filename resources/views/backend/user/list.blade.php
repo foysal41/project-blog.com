@@ -48,7 +48,7 @@
 
                 @empty
                 <tr>
-                  <td colspan="100%"> Record Not Found</td>
+                  <td colspan="100%"> Record Not Found </td>
                 </tr>
 
                  
