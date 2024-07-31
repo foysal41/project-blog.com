@@ -47,4 +47,10 @@ Route::group(['middleware' => 'adminuser'], function () {
     Route::get('panel/dashboard', [DashboardController::class, 'dashboard']);
 
     Route::get('panel/user/list', [UserController::class, 'user']);
+    Route::get('panel/user/add', [UserController::class, 'add_user']);
+    Route::post('panel/user/add', [UserController::class, 'insert_user']);
+    Route::get('panel/user/edit/{id}', [UserController::class, 'edit_user']);
+    Route::post('panel/user/edit/{id}', [UserController::class, 'update_user']);
+    Route::get('panel/user/delete/{id}', [UserController::class, 'delete_user']);
+    
 });

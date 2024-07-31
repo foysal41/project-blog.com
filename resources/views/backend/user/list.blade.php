@@ -8,10 +8,11 @@
       <div class="col-lg-12">
 
         <div class="card">
+          @include('layouts.message')
           <div class="card-body">
             <h5 class="card-title">
                 Users List
-                <a href="" class="btn btn-primary float-end"> Add New</a>
+                <a href="{{ url('panel/user/add')}}" class="btn btn-primary float-end"> Add New</a>
             </h5>
 
             <!-- Default Table -->
@@ -35,12 +36,12 @@
                   <td>{{ $value->name }}</td>
                   <td>{{ $value->email }}</td>
                   <td>{{ !empty($value->email_verified_at) ? 'Yes' : 'No' }}</td> 
-                  <td>{{ !empty($value->status) ? 'Varified' : 'Not ' }}</td>
+                  <td>{{ !empty($value->status) ? 'Active' : 'Inactive ' }}</td>
                   <td>{{ ($value->created_at) }}</td>
                   <td>
 
-                    <a href="" class="btn btn-sm btn-primary">Edit</a>
-                    <a href="" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="{{ url('panel/user/edit/' . $value->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                    <a onclick="return confirm(' Are you sure you want to delete?');" href="{{ url('panel/user/delete/' . $value->id)}}" class="btn btn-sm btn-danger">Delete</a>
 
                   </td>
                   
