@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{{ url('panel/dashboard')}}">
+        <a class="nav-link @if(Request::segment(2) != 'dashboard') collapse @endif"  href="{{ url('panel/dashboard')}}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -16,7 +16,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url('panel/user/list')}}">
+        <a class="nav-link @if(Request::segment(2) != 'user') collapse @endif" href="{{url('panel/user/list')}}">
           <i class="bi bi-person"></i>
           <span>User</span>
         </a>
@@ -24,7 +24,7 @@
       
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url('panel/category/list')}}">
+        <a class="nav-link @if(Request::segment(2) != 'user') collapse @endif" href="{{url('panel/category/list')}}">
           <i class="bi bi-person"></i>
           <span>Category</span>
         </a>
