@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryModel extends Model
 {
     use HasFactory;
+    
     protected $table = 'category';
+
+    static public function getSingle($id){
+        return CategoryModel::find($id);
+    }
+
     static public function getRecord(){
         return self::select('category.*')->where('is_delete' , '=' , 0)->orderBy('id' , 'desc')->paginate(30);
     }

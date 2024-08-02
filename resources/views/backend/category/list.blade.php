@@ -43,14 +43,14 @@
                   <td>{{ $value->meta_description }}</td>
                   <td>{{ $value->meta_keywords }}</td>
 
-                  <td>{{ empty($value->status) ? 'Active' : 'Inactive ' }}</td>
+                  <td>{{ !empty($value->status) ? 'Active' : 'Inactive ' }}</td>
                   <td>{{ date('d-m-Y', strtotime($value->created_at))}}</td>
                   <td>
 
-                    <!--
-                    <a href="{{ url('panel/user/edit/' . $value->id)}}" class="btn btn-sm btn-primary">Edit</a>
-                    <a onclick="return confirm(' Are you sure you want to delete?');" href="{{ url('panel/user/delete/' . $value->id)}}" class="btn btn-sm btn-danger">Delete</a>
-                    -->
+                    
+                    <a href="{{ url('panel/category/edit/' . $value->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                    <a onclick="return confirm(' Are you sure you want to delete?');" href="{{ url('panel/category/delete/' . $value->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                    
 
                   </td>
                   
