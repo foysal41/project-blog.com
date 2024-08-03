@@ -24,14 +24,14 @@
       
 
       <li class="nav-item">
-        <a class="nav-link @if(Request::segment(2) != 'user') collapse @endif" href="{{url('panel/category/list')}}">
+        <a class="nav-link @if(Request::segment(2) != 'category') collapse @endif" href="{{url('panel/category/list')}}">
           <i class="bi bi-person"></i>
           <span>Category</span>
         </a>
       </li><!-- End Category Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url('panel/blog/list')}}">
+        <a class="nav-link @if(Request::segment(2) != 'blog') collapse @endif" href="{{url('panel/blog/list')}}">
           <i class="bi bi-person"></i>
           <span>Blog</span>
         </a>

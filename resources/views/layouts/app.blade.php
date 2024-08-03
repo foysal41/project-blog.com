@@ -60,6 +60,7 @@
   <script src="front/lib/easing/easing.min.js"></script>
   <script src="front/lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="front/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="front/lib/lightbox/js/lightbox.min.js"></script>
 
   <!-- Contact Javascript File -->
