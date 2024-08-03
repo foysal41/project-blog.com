@@ -18,4 +18,13 @@ class CategoryModel extends Model
     static public function getRecord(){
         return self::select('category.*')->where('is_delete' , '=' , 0)->orderBy('id' , 'desc')->paginate(30);
     }
+
+    static public function getCategory()
+    {
+        return self::select('category.*')
+            ->where('status', '=', 1)
+            ->where('is_delete', '=', 0)
+            ->get();
+
+    }
 }

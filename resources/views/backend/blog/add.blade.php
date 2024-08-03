@@ -24,8 +24,13 @@
 
               <div class="col-12">
                 <label for="inputNanme4" class="form-label">Category *</label>
-               <select name="category_id" id="" class="form-control">
+               <select name="category_id" id="" class="form-control" required>
                 <option value="">Select Category</option>
+                <!--Array আকারে তুলে category dropdown দেখাতে সক্কম হলাম-->
+                <!--এই $getCategory model থেকে ডাটা call করা হয়েছে-->
+                @foreach ($getCategory as $value )
+                  <option value="{{ $value->id}}">{{ $value->name}}</option>
+                @endforeach
                </select>
               </div>
 
@@ -44,7 +49,7 @@
 
               <div class="col-12">
                 <label for="inputNanme4" class="form-label"> Tags</label>
-                <input type="text"  name="tags" class="form-control" id="inputNanme4">
+                <input type="text"  name="meta_keywords" class="form-control" id="inputNanme4">
               </div>
 
               <div class="col-12">
