@@ -12,7 +12,8 @@ class BlogController extends Controller
 {
     public function blog()
     {
-        return view('backend.blog.list');
+        $data['getRecord'] = BlogModel::getRecord();
+        return view('backend.blog.list', $data);
     }
 
     public function add_blog()
@@ -61,5 +62,45 @@ class BlogController extends Controller
         $save->save();
 
         return redirect('panel/blog/list')->with('success', 'Blog Inserted Successfully');
+    }
+
+    public function edit_blog($id){
+
+        $data['getCategory'] = CategoryModel::getCategory();
+        $data['getRecord'] = blogModel::getSingle($id);
+          return view('backend.blog.edit' , $data);
+    }
+    
+
+    public function update_blog($id, Request $request)
+    {
+        $save = BlogModel::getSingle($id);
+        $save->title        = trim($request->title);
+        $save->category_id  = trim($request->category_id);
+        $save->image_file   = trim($request->image_file);
+        $save->description  = trim($request->description);
+        $save->meta_keywords          = trim($request->meta_keywords);
+        $save->is_publish   = trim($request->is_publish);
+        $save->status       = trim($request->status);
+
+        if ($request->file('image_file')) {
+            $file = $request->file('image_file'); // ফাইল অবজেক্ট পাওয়া
+            $ext = $file->getClientOriginalExtension(); // ফাইল এক্সটেনশন পাওয়া
+            $filename = $save->slug . '.' . $ext; // ফাইলের নাম নির্ধারণ করা
+            $file->move('upload/blog' , $filename); // ফাইল মুভ করা
+            $save->image_file = $filename; // ডাটাবেসে ফাইলের নাম সংরক্ষণ করা
+        } 
+        
+        $save->save();
+
+        return redirect('panel/blog/list')->with('success', 'Blog Updated Successfully');
+    }
+
+    public function delete_blog($id)
+    {
+        $save = BlogModel::getSingle($id);
+        $save->id_delete = 1;
+        $save->save();
+        return redirect()->back()->with('success', 'Blog Deleted Successfully');
     }
 }

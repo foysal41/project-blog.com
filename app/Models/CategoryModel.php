@@ -27,4 +27,6 @@ class CategoryModel extends Model
             ->get();
 
     }
+
+    
 }
